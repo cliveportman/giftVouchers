@@ -23,8 +23,8 @@ class GiftVouchers_SetupService extends BaseApplicationComponent
             $productType->hasUrls = FALSE;
             $productType->hasVariants = FALSE;
             $productType->titleFormat = "{ product.title }";
-            $productType->skuFormat = "GV{ now | date('U') }";
-            $productType->descriptionFormat = "{ product.title }";
+            $productType->skuFormat = "{ slug }";
+            $productType->descriptionFormat = "{ title }";
             $productType->template = FALSE;
 
             // VALIDATE THE MODEL
