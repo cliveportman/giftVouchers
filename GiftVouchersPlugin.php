@@ -29,6 +29,11 @@ class GiftVouchersPlugin extends BasePlugin
 		return 'https://www.theportman.co/';
 	}
 
+	public function onAfterInstall()
+	{
+		craft()->giftVouchers_setup->createProductType();
+	}
+
 	public function init()
 	{
 	}
