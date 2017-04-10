@@ -36,6 +36,25 @@ class GiftVouchersPlugin extends BasePlugin
 
 	public function init()
 	{
+        parent::init();
+
+        craft()->on('commerce_products.onSaveProduct', function (Event $event) {
+            if ($event->params['isNewProduct']) {
+            	$product = $event->params['product'];
+            	craft()->giftVouchers_product->addGiftVoucherToCart($product);
+            }
+        });
+        
+        craft()->on('commerce_orders.onBeforeOrderComplete', function (Event $event) {
+            $order = $event->params['order'];
+            craft()->giftVouchers_discount->createDiscounts($order);
+        });
+        
+        craft()->on('commerce_orders.onOrderComplete', function (Event $event) {
+            $order = $event->params['order'];
+            craft()->giftVouchers_discount->updateDiscount($order);
+        });
+        
 	}
 
 }
