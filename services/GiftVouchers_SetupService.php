@@ -22,7 +22,7 @@ class GiftVouchers_SetupService extends BaseApplicationComponent
             $productType->hasDimensions = FALSE;
             $productType->hasUrls = FALSE;
             $productType->hasVariants = FALSE;
-            $productType->titleFormat = "{ product.title }";
+            $productType->titleFormat = '${ price } Gift Voucher'; // NOT SURE THIS IS USED
             $productType->skuFormat = "{ slug }";
             $productType->descriptionFormat = "{ title }";
             $productType->template = FALSE;
