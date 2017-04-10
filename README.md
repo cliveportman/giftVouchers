@@ -27,7 +27,7 @@ So they can easily be identified from other discounts in the store, we're prepen
     <input type="hidden" name="variants[new1][unlimitedStock]" value="1">
     <input type="hidden" name="variants[new1][sku]" value="GV{{ now | date('U') }}">
     <input type="hidden" name="variants[new1][minQty]" value="1">
-    <input type="hidden" name="variants[new1][maxQty]" value="5">
+    <input type="hidden" name="variants[new1][maxQty]" value="1">
     <input type="hidden" name="taxCategoryId" value="1">
     <input type="hidden" name="freeShipping" value="1">
     <input type="hidden" name="promotable" value="1">
