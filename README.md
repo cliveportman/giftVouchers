@@ -7,8 +7,10 @@ Installing the plugin will create a product type called `giftVouchers` but you'l
 
 Remember to add them to the product's fields within Craft Commerce.
 
+Rather than pre-create products for purchase, we create them on the frontend as and when they're needed. This prevents say, three of the same gift voucher being added to the cart, and simplifies adding recipient names to the vouchers. 
+
 ## Gift voucher format
-So they can easily be identified from other discounts in the store, we're prepending `gv` to the beginning of the coupon code.
+So they can easily be identified from other discounts in the store, we're prepending `gv` to the beginning of the coupon code. 
 
 ## Create discount form
 ```
