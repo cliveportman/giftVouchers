@@ -77,4 +77,17 @@ class GiftVouchers_ProductService extends BaseApplicationComponent
 
     }
 
+    public function updateProductWithDiscountCode($productId, $discountCode) 
+    {
+
+        // GET THE PRODUCT, UPDATE IT AND SAVE
+        $product = craft()->commerce_products->getProductById($productId);
+        $product->setContentFromPost(array('discountCode' => $discountCode ));
+        if (craft()->commerce_products->saveProduct($product)) {
+            GiftVouchersPlugin::log("Product #$product->id updated with coupon code $discountCode", LogLevel::Info);
+        }
+        return TRUE;
+
+    }
+
 }

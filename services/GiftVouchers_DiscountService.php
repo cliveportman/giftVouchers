@@ -42,10 +42,12 @@ class GiftVouchers_DiscountService extends BaseApplicationComponent
                     
                     if (craft()->commerce_discounts->saveDiscount($discount, $groups, $productTypes, $products))
                     {
-                        GiftVouchersPlugin::log("$discount->name created for product #$product->id", LogLevel::Info);                        
+                        GiftVouchersPlugin::log("$discount->name created for product #$product->id with coupon code $discount->code", LogLevel::Info);                        
                     } else {
                         GiftVouchersPlugin::log("$discount->name could not be created for product #$product->id", LogLevel::Error);
                     }
+                    
+                    craft()->giftVouchers_product->updateProductWithDiscountCode($product->id, $discount->code);
 
                 }
 
