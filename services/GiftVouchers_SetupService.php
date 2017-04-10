@@ -22,7 +22,7 @@ class GiftVouchers_SetupService extends BaseApplicationComponent
             $productType->hasDimensions = FALSE;
             $productType->hasUrls = FALSE;
             $productType->hasVariants = FALSE;
-            $productType->titleFormat = '${ price } Gift Voucher';
+            $productType->titleFormat = "{ product.title }";
             $productType->skuFormat = "{ slug }";
             $productType->descriptionFormat = "{ title }";
             $productType->template = FALSE;
@@ -48,14 +48,6 @@ class GiftVouchers_SetupService extends BaseApplicationComponent
                 GiftVouchersPlugin::log('"Gift Voucher" product type failed validation.', LogLevel::Error);
 
             }
-
-            /*
-            ********************************
-            I'D LOVE TO CREATE THE BALANCE AND DISCOUNT FIELDS HERE
-            THEN CREATE A LAYOUT AND ADD THAT TO THE PRODUCT TYPE
-            BUT DON'T HAVE TIME. CREATE MANUALLY INSTEAD.
-            ********************************
-            */
 
         }
 
