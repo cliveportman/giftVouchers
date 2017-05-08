@@ -16,6 +16,12 @@ class GiftVouchersController extends BaseController
     {
         $this->requirePostRequest();
 
+        // CHECK THE PRODUCT IS THE CORRECT TYPE ID
+        $settings = craft()->plugins->getPlugin('giftvouchers')->getSettings();
+        if ( craft()->request->getPost('typeId') != $settings->productTypeId ) {
+            throw new Exception("Incorrect product ID");
+        }
+
         $product = $this->_setProductFromPost();
         CommerceProductHelper::populateProductVariantModels($product, craft()->request->getPost('variants'));
 

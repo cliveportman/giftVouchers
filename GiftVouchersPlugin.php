@@ -34,6 +34,20 @@ class GiftVouchersPlugin extends BasePlugin
 		craft()->giftVouchers_setup->createProductType();
 	}
 
+	protected function defineSettings()
+	{
+		return array(
+			'productTypeId' => array(AttributeType::String, 'required' => true, 'label' => 'Product type ID')
+		);
+	}
+
+	public function getSettingsHtml()
+	{
+		return craft()->templates->render('giftvouchers/_settings', array(
+			'settings' => $this->getSettings()
+		));
+    }
+
 	public function init()
 	{
         parent::init();

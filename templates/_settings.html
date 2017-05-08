@@ -1,0 +1,11 @@
+{% import '_includes/forms' as forms %}
+
+<p>Please enter the product type ID for the product type created when this plugin was installed:</p>
+
+{{ forms.textField({
+	label: 'Product type ID'|t,
+	required: true,
+	name: 'productTypeId',
+	value: settings.productTypeId,
+	errors: settings.getErrors('productTypeId')
+}) }}
