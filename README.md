@@ -5,8 +5,7 @@ Adds gift vouchers to Craft Commerce, utilising discounts.
 Installing the plugin will create a product type called `giftVouchers` but you'll need to create and add a couple of custom fields before using the cart/checkout:
 - recipientName (plain text)
 - discountCode (plain text)
-
-Remember to add them to the product's fields within Craft Commerce.
+- add them to the product type's fields within Craft Commerce.
 
 Rather than pre-create products for purchase, we create them on the frontend as and when they're needed. This prevents say, three of the same gift voucher being added to the cart, and simplifies adding recipient names to the vouchers. 
 
